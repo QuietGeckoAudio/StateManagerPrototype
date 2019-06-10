@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://StateManager.gd" type="Script" id=1]
+[ext_resource path="res://AudioState.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MX/05_MoldingMinds.wav" type="AudioStream" id=3]
+
+[node name="StateManager" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="OptionButton" type="OptionButton" parent="."]
+margin_right = 88.0
+margin_bottom = 20.0
+text = "Normal"
+items = [ "Normal", null, false, 0, null, "Memory", null, false, 1, null ]
+selected = 0
+
+[node name="States" type="Node" parent="."]
+
+[node name="Normal" parent="States" instance=ExtResource( 2 )]
+margin_left = 414.962
+margin_top = 277.013
+margin_right = 414.962
+margin_bottom = 277.013
+State = "Normal"
+
+[node name="Memory" parent="States" instance=ExtResource( 2 )]
+margin_left = 642.323
+margin_top = 277.013
+margin_right = 642.323
+margin_bottom = 277.013
+State = "Memory"
+personalID = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]

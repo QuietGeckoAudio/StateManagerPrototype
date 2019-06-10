@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AudioState.gd" type="Script" id=1]
+[ext_resource path="res://Pitch.gd" type="Script" id=2]
+
+[node name="AudioState" type="Control"]
+margin_left = 549.757
+margin_top = 274.879
+margin_right = 549.757
+margin_bottom = 274.879
+script = ExtResource( 1 )
+
+[node name="Pitch" type="HSlider" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = -38.0
+margin_right = 69.5
+margin_bottom = -22.0
+min_value = 0.1
+max_value = 2.0
+step = 0.01
+value = 1.0
+ticks_on_borders = true
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pitch"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.5
+margin_top = -19.0
+margin_right = 40.5
+margin_bottom = -2.0
+text = "PITCH"
+
+[node name="LPF" type="HSlider" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = 32.0
+margin_right = 69.5
+margin_bottom = 48.0
+min_value = 500.0
+max_value = 20000.0
+value = 20000.0
+ticks_on_borders = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LPF"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.5
+margin_top = -15.0
+margin_right = 26.5
+margin_bottom = -2.0
+text = "LPF
+"
+scroll_active = false
+
+[node name="HPF" type="HSlider" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = 102.0
+margin_right = 69.5
+margin_bottom = 118.0
+min_value = 20.0
+max_value = 2000.0
+value = 20.0
+ticks_on_borders = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HPF"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -19.5
+margin_top = -15.0
+margin_right = 26.5
+margin_bottom = -2.0
+text = "HPF
+"
+scroll_active = false
+
+[node name="Volume" type="HSlider" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = -108.0
+margin_right = 69.5
+margin_bottom = -92.0
+min_value = -80.0
+max_value = 6.0
+step = 0.1
+ticks_on_borders = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Volume"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -27.5
+margin_top = -27.0
+margin_right = 28.5
+text = "VOLUME"
+
+[node name="Label" type="Label" parent="."]
+margin_left = -21.2809
+margin_top = -182.661
+margin_right = 18.7191
+margin_bottom = -168.661
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -121.898
+margin_top = -146.81
+margin_right = -81.8983
+margin_bottom = -106.81
+
